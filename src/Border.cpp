@@ -8,17 +8,17 @@ void Border::init()
 {
     // Vertical Border.
     Pose leftBorder{0,static_cast<int>(_gridHeight/2) };
-    _borders.emplace_back(leftBorder, _color, Shape::Vertical, _gridHeight, _gridWidth, _gridHeight);
+    _borders.emplace_back(leftBorder, Shape::Vertical, _gridHeight);
 
     Pose rightBorder{static_cast<int>(_gridWidth) - 1, static_cast<int>(_gridHeight/2)};
-    _borders.emplace_back(rightBorder, _color, Shape::Vertical, _gridHeight, _gridWidth, _gridHeight);
+    _borders.emplace_back(rightBorder, Shape::Vertical, _gridHeight);
 
     // Horizontal Border
     Pose topBorder{static_cast<int>(_gridWidth/2), 0};
-    _borders.emplace_back(topBorder, _color, Shape::Horizontal, _gridWidth, _gridWidth, _gridHeight);
+    _borders.emplace_back(topBorder, Shape::Horizontal, _gridWidth);
 
     Pose bottomBorder{static_cast<int>(_gridWidth/2), static_cast<int>(_gridHeight) - 1};
-    _borders.emplace_back(bottomBorder, _color, Shape::Horizontal, _gridWidth, _gridWidth, _gridHeight);
+    _borders.emplace_back(bottomBorder, Shape::Horizontal, _gridWidth);
 }
 
 void Border::render(SDL_Renderer* sdlRenderer, SDL_Rect& block)

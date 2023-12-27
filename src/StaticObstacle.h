@@ -11,8 +11,8 @@
 
 class StaticObstacle : public Obstacle {
 public:
-    StaticObstacle(Pose center, Color color, Shape shape, int size, int gridWidth, int gridHeight):
-    Obstacle(center, color, shape, size, gridWidth, gridHeight) { init();};
+    StaticObstacle(Pose center, Shape shape, int size):
+    Obstacle(center, shape, size) { init();};
     void render(SDL_Renderer*, SDL_Rect&) override;
     void init(){ constructBody();}
 private:
