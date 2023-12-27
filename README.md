@@ -31,7 +31,7 @@ Relevant files: `src/Database.h`, `src/Database.cpp`.
 ### (4) Concurrency
 * `The project uses multithreading.`, `A promise and future is used in the project`, `A mutex or lock is used in the project.`: Since rendering data on screen one of the heavy processes, we render the border obstacles using multi-tasking. As shown at `Border::render(SDL_Renderer* sdlRenderer, SDL_Rect& block)` in `Border.cpp`, each border has been rendered in a separate thread asynchronously with other borders. Since `sdlRenderer` is a shared resource between the threads, we assign a lock guard, check line 22 in `StaticObstacle.cpp` file, to lock the resource while rendering a cell of the border. 
 
-In summary, a border (`Border.h`) is **a side** of the environment where it represents a static obstacle (`StaticObstacle.h`), which is a form of obstacle (`Obstacle.h`). We handle food placement and snakehead/body not to be placed within a cell belonging to an obstacle. As shown in the screenshot above, the user loses of the snake head hits any obstacle in the environment, borders in this case. 
+In summary, a border (`Border.h`) is **a side** of the environment that represents a static obstacle (`StaticObstacle.h`), which is a form of obstacle (`Obstacle.h`). We handle food placement and snakehead/body not to be placed within a cell belonging to an obstacle. As shown in the screenshot above, the user loses of the snake head hits any obstacle in the environment, borders in this case. 
 
 ## Dependencies for Running Locally
 * cmake >= 3.7
